@@ -1,0 +1,79 @@
+Events Booking Application  (MERN Stack)
+----------------------------------------
+Client Side Setup
+-----------------
+src
+	-> root
+		-> layout
+			-> home
+			-> navbar
+		-> util
+			-> alert
+			-> spinner
+	-> users
+		-> login
+		-> register
+	-> events
+		-> free-event
+		-> pro-event
+		-> upload-event
+
+
+modules
+-------
+npm install mdbootstrap axios react-router-dom redux react-redux redux-logger redux-devtools-extension
+
+
+
+Server side Configuration
+-------------------------
+modules
+-------
+npm install express mongoose cors express-validator gravatar dotenv bcryptjs jsonwebtoken
+
+REST API(userRouter , eventRouter)
+--------
+
+1) User Router
+   Usage : Register a User
+   URL : http://127.0.0.1:5000/api/users/register
+   params : name , email , password
+   access : public
+   method : post
+
+2) User Router
+   Usage : Login a User
+   URL : http://127.0.0.1:5000/api/users/register
+   params : email , password
+   access : public
+   method : post
+
+3) Event Router
+   Usage : Upload an Events
+   URL : http://127.0.0.1:5000/api/events/upload
+   params : name , image , date , type , price , info
+   access : private
+   method : post
+
+4) Event Router
+   Usage : Get Free Events
+   URL : http://127.0.0.1:5000/api/events/free
+   params : no-fields
+   access : public
+   method : Get
+
+5) Event Router
+   Usage : Get pro-event
+   URL : http://127.0.0.1:5000/api/events/pro
+   params : no-fields
+   access : private
+   method : Get
+
+
+Database setup
+--------------
+database_name : react-events-booking
+tables : users, events
+
+Users : name , email , passoword , isAdmin , avatar , created
+Events : name , image , date , type , price , info , created
